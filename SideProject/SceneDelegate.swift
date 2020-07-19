@@ -59,19 +59,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 }
-
-//struct AppRootView: View {
-//    
-//    @ObservedObject private var auth: Auth
-//    var body: some View {
-//        Group {
-//            if auth.token != nil {
-//                MainTabbedView()
-//            } else {
-//                StartRegistrationView()
-//            }
-//        }
-//    }
-//}
-//
-//
