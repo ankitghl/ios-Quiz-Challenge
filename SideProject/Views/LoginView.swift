@@ -67,12 +67,17 @@ struct LoginView: View {
 //                        self.alertMessage = "Please enter valid Password"
 //                        return
 //                    }
-//                    registerUser(userName: nil,
-//                                 password: self.password,
-//                                 email: self.email.lowercased()) { (resultUserModel) in
-//                                    print(resultUserModel)
-//                    }
-
+                    let loginHandler = LoginHandler(email: self.email,
+                                                    password: self.password,
+                                                    username: nil)
+                    loginHandler.requestLogin { result in
+                        switch result {
+                        case .success(let loggedInUser):
+                            print(loggedInUser)
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
                 }) {
                     Text("Sign In")
                         .font(.headline)

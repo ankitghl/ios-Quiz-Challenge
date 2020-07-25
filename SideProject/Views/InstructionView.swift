@@ -9,6 +9,17 @@
 import SwiftUI
 import WebKit
 
+struct InstructionView: View {    
+    var body: some View {
+        Text("Instruction View")
+    }
+}
+
+struct InstructionView_Previews: PreviewProvider {
+    static var previews: some View {
+        InstructionView()
+    }
+}
 //struct InstructionView: View {
 //    var body: some View {
 //        NavigationView {

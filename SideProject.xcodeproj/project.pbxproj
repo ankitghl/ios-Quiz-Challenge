@@ -25,6 +25,10 @@
 		D826115424B0E14600DBA1A4 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D826115324B0E14600DBA1A4 /* KeyboardHandler.swift */; };
 		D846263724BB18B100A71FEF /* APIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846263624BB18B100A71FEF /* APIParser.swift */; };
 		D846263A24BB18F000A71FEF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846263924BB18F000A71FEF /* UserModel.swift */; };
+		D8A5185124CC314800233590 /* AppUserDefaultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A5185024CC314800233590 /* AppUserDefaultExtension.swift */; };
+		D8A5185324CC3CC900233590 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A5185224CC3CC900233590 /* HomeView.swift */; };
+		D8A5185624CC3E9600233590 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A5185524CC3E9600233590 /* LoginHandler.swift */; };
+		D8A5185824CC59FC00233590 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A5185724CC59FC00233590 /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		D826115324B0E14600DBA1A4 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		D846263624BB18B100A71FEF /* APIParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIParser.swift; path = "API Handling/APIParser.swift"; sourceTree = "<group>"; };
 		D846263924BB18F000A71FEF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D8A5185024CC314800233590 /* AppUserDefaultExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefaultExtension.swift; sourceTree = "<group>"; };
+		D8A5185224CC3CC900233590 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D8A5185524CC3E9600233590 /* LoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
+		D8A5185724CC59FC00233590 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +88,10 @@
 		D8080C9724A8D18100CC1879 /* SideProject */ = {
 			isa = PBXGroup;
 			children = (
+				D8A5185424CC3E8600233590 /* Handlers */,
 				D846263824BB18E200A71FEF /* Model */,
 				D8080C9824A8D18100CC1879 /* AppDelegate.swift */,
 				D8080C9A24A8D18100CC1879 /* SceneDelegate.swift */,
-				D826115324B0E14600DBA1A4 /* KeyboardHandler.swift */,
 				D826114824B0DF6000DBA1A4 /* Extensions */,
 				D826114624B0DF3700DBA1A4 /* Views */,
 				D826114724B0DF4B00DBA1A4 /* Resources */,
@@ -107,6 +115,8 @@
 				D8080C9C24A8D18100CC1879 /* LoginView.swift */,
 				D826114424B09D6A00DBA1A4 /* SignUpView.swift */,
 				D80D59B124C4488300736F4C /* InstructionView.swift */,
+				D8A5185224CC3CC900233590 /* HomeView.swift */,
+				D8A5185724CC59FC00233590 /* ActivityIndicator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +140,7 @@
 				D826114F24B0E0EF00DBA1A4 /* AppViewExtension.swift */,
 				D826115124B0E10A00DBA1A4 /* AppResponderExtension.swift */,
 				D80D59AF24BF325C00736F4C /* AppStringExtension.swift */,
+				D8A5185024CC314800233590 /* AppUserDefaultExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -141,6 +152,15 @@
 				D80D59B324C449E800736F4C /* InstructionModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D8A5185424CC3E8600233590 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				D826115324B0E14600DBA1A4 /* KeyboardHandler.swift */,
+				D8A5185524CC3E9600233590 /* LoginHandler.swift */,
+			);
+			path = Handlers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,16 +234,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A5185624CC3E9600233590 /* LoginHandler.swift in Sources */,
 				D826114524B09D6A00DBA1A4 /* SignUpView.swift in Sources */,
+				D8A5185824CC59FC00233590 /* ActivityIndicator.swift in Sources */,
 				D8080C9924A8D18100CC1879 /* AppDelegate.swift in Sources */,
 				D846263724BB18B100A71FEF /* APIParser.swift in Sources */,
 				D80D59B024BF325C00736F4C /* AppStringExtension.swift in Sources */,
 				D826115024B0E0EF00DBA1A4 /* AppViewExtension.swift in Sources */,
+				D8A5185324CC3CC900233590 /* HomeView.swift in Sources */,
 				D826114C24B0DFBB00DBA1A4 /* AppPublisherExtension.swift in Sources */,
 				D826114E24B0DFE900DBA1A4 /* AppNotificationExtension.swift in Sources */,
 				D826115424B0E14600DBA1A4 /* KeyboardHandler.swift in Sources */,
 				D826115224B0E10A00DBA1A4 /* AppResponderExtension.swift in Sources */,
 				D8080C9B24A8D18100CC1879 /* SceneDelegate.swift in Sources */,
+				D8A5185124CC314800233590 /* AppUserDefaultExtension.swift in Sources */,
 				D80D59B424C449E800736F4C /* InstructionModel.swift in Sources */,
 				D8080C9D24A8D18100CC1879 /* LoginView.swift in Sources */,
 				D80D59B224C4488300736F4C /* InstructionView.swift in Sources */,

@@ -15,6 +15,7 @@ struct SignUpView: View {
     @State private var confirmPassword = ""
     @State private var alertMessage = ""
     @State private var showAlert = false
+    @State private var shouldAnimate = false
 
     var body: some View {
         VStack() {
@@ -38,7 +39,8 @@ struct SignUpView: View {
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
-                
+                    .textContentType(.username)
+
                 TextField("Email", text: self.$email)
                     .padding()
                     .frame(height: 40)
@@ -46,13 +48,15 @@ struct SignUpView: View {
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
                     .keyboardType(.emailAddress)
-                
+                    .textContentType(.emailAddress)
+
                 SecureField("Password", text: self.$password)
                     .padding()
                     .frame(height: 40)
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
+                    .textContentType(.password)
                 
                 SecureField("Confirm Password", text: self.$confirmPassword)
                     .padding()
@@ -60,10 +64,12 @@ struct SignUpView: View {
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
-                
+                    .textContentType(.password)
+
             }.padding([.leading, .trailing], 27.5)
             
-            
+            ActivityIndicator(shouldAnimate: $shouldAnimate)
+
             Button(action: {
                 guard self.username.handleTextInput(for: .username) else {
                     self.showAlert = true
@@ -80,16 +86,23 @@ struct SignUpView: View {
                     self.alertMessage = "Please enter valid Password"
                     return
                 }
-                guard self.password == self.confirmPassword else {
-                    self.showAlert = true
-                    self.alertMessage = "Password and Confirm Password does not match"
-                    return
-                }
-
-                registerUser(userName: self.username,
-                             password: self.password,
-                             email: self.email) { (resultUserModel) in
-                                print(resultUserModel)
+//                guard self.password == self.confirmPassword else {
+//                    self.showAlert = true
+//                    self.alertMessage = "Password and Confirm Password does not match"
+//                    return
+//                }
+                self.shouldAnimate = true
+                let loginHandler = LoginHandler(email: self.email,
+                                                password: self.password,
+                                                username: self.username)
+                loginHandler.requestSignUp { result in
+                    self.shouldAnimate = false
+                    switch result {
+                    case .success(let signedInUser):
+                        print(signedInUser)
+                    case .failure(let error):
+                        print(error)
+                    }
                 }
             }) {
                 Text("Sign Up")
